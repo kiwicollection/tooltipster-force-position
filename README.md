@@ -46,6 +46,7 @@ theme
 touchDevices  
 trigger  
 updateAnimation  
+forcePosition
 
 Methods
 -------------------------
