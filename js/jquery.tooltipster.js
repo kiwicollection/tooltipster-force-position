@@ -43,6 +43,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			offsetY: 0,
 			onlyOne: false,
 			position: 'top',
+			forcePosition: false,
 			positionTracker: false,
 			positionTrackerCallback: function(origin){
 				// the default tracker callback will close the tooltip when the trigger is
@@ -865,9 +866,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					}
 					
 					// if the tooltip goes off the right of the screen, line it up with the right side of the window
-					if (((myLeft + tooltipWidth) - windowLeft) > windowWidth) {
-						arrowReposition = myLeft - ((windowWidth + windowLeft) - tooltipWidth);
-						myLeft = (windowWidth + windowLeft) - tooltipWidth;
+					if (!self.options.forcePosition) {
+						if (((myLeft + tooltipWidth) - windowLeft) > windowWidth) {
+							arrowReposition = myLeft - ((windowWidth + windowLeft) - tooltipWidth);
+							myLeft = (windowWidth + windowLeft) - tooltipWidth;
+						}
 					}
 				}
 				
@@ -879,9 +882,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					}
 					
 					// if it goes off the bottom of the page
-					if (((proxy.offset.top + proxy.dimension.height + tooltipHeight + 12 + offsetY) > ($(window).scrollTop() + $(window).height())) && (switchFrom.indexOf('bottom') > -1)) {
-						practicalPosition = switchTo;
-						myTop = (proxy.offset.top - tooltipHeight) - offsetY - 12;
+					if (!self.options.forcePosition) {
+						if (((proxy.offset.top + proxy.dimension.height + tooltipHeight + 12 + offsetY) > ($(window).scrollTop() + $(window).height())) && (switchFrom.indexOf('bottom') > -1)) {
+							practicalPosition = switchTo;
+							myTop = (proxy.offset.top - tooltipHeight) - offsetY - 12;
+						}
 					}
 				}
 				
