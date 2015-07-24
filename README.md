@@ -1,6 +1,8 @@
 Tooltipster
 ===========
 
+To this fork added "forcePosition" option.
+
 A jQuery tooltip plugin by Caleb Jacob under MIT license.  
 Compatible with Mozilla Firefox, Google Chrome, IE8+ and others. Requires jQuery 1.7+
 
