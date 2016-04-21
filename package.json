@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/inconsiderate/tooltipster-force-position.git"
   },
-  "author": "Caleb Jacob"
+  "author": "Caleb Jacob",
   "dependencies": {
     "jquery": ">=1.7"
   }
