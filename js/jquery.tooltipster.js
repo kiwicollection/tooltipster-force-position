@@ -436,7 +436,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 								}
 							}
 							// here we'll set the same bindings for both clicks and touch on the body to hide the tooltip
-							else if(self.options.trigger == 'click' || self.options.trigger == 'null'){
+							else if(self.options.trigger == 'click' || self.options.trigger == 'none'){
 								
 								// use a timeout to prevent immediate closing if the method was called on a click event and if options.delay == 0 (because of bubbling)
 								setTimeout(function() {
